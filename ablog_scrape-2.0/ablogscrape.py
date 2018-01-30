@@ -15,8 +15,8 @@ _NEXT_ARTICLE_TARGET_CLASS =\
     'skin-pagingPrev skin-btnPaging ga-pagingEntryPrevTop'
 
 
-class AmblScrape(object):
-    '''AmblScrape'''
+class AblogScrape(object):
+    '''AblogScrape'''
     def __init__(self):
         self.driver =\
             webdriver.PhantomJS(service_log_path='/tmp/ghostdriver.log')

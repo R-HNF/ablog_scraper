@@ -10,7 +10,7 @@ import time
 
 try:
     MY_MODUDLES = [
-        'amblscrape-2.0',
+        'ablog_scrape-2.0',
         'urldl-2.3',
         'colpri-2.3',
         'fileope-1.0'
@@ -20,7 +20,7 @@ try:
         sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/' + mod)
 
     from fileope import FileOperation
-    from amblscrape import AmblScrape
+    from ablogscrape import AblogScrape
     from urldl import URLDownload
     from colpri import ColorPrint
 except:
@@ -35,12 +35,12 @@ TIME_SLEEP = 1.0
 
 def main():
     '''main'''
-    ambl = AmblScrape()
+    absc = AblogScrape()
     c_p = ColorPrint()
     dler = URLDownload()
     stg = FileOperation()
 
-    print c_p.with_color('EBC Ameba Blog Scraping', 'purple')
+    print c_p.with_color('A Blog Scraping', 'purple')
     print c_p.with_color('Checking the savepath', 'cyan')
     dler.load_savepath()
 
@@ -48,8 +48,8 @@ def main():
     stg.load_file('LATEST_ARTICLE.txt')
 
     latest_article = stg.readline()
-    ambl.set_latest_article(latest_article)
-    scraper = ambl.main_scrape()
+    absc.set_latest_article(latest_article)
+    scraper = absc.main_scrape()
 
     image_number = 0
 
@@ -73,7 +73,7 @@ def main():
         finally:
             pass
 
-    new_latest_article = ambl.get_new_latest_article()
+    new_latest_article = absc.get_new_latest_article()
     stg.update_content(new_latest_article)
 
     c_p.with_color(['Downloaded', str(image_number), 'images'], 'purple')
