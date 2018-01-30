@@ -3,4 +3,4 @@
 
 '''Settings related to urldl.py'''
 
-SAVEPATH = "/Users/ryo/blog/ebc_ambl3"
+SAVEPATH = "/Users/ryo/blog/hoge"
